@@ -1,7 +1,7 @@
-package com.kampa.telemetry.components;
+package org.kampa.components;
 
-import com.kampa.telemetry.service.MqttPayload;
-import com.kampa.telemetry.service.MqttSenderService;
+import org.kampa.service.MqttPayload;
+import org.kampa.service.MqttSenderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;

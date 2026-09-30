@@ -1,4 +1,5 @@
-package com.kampa.telemetry.service;
+package org.kampa.service;
+
 import jakarta.annotation.PostConstruct;
 import org.eclipse.paho.client.mqttv3.IMqttClient;
 import org.eclipse.paho.client.mqttv3.MqttClient;
@@ -6,6 +7,8 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import java.util.logging.Logger;
 
 @Service
 public class MqttSenderService {
@@ -17,6 +20,7 @@ public class MqttSenderService {
 
     @Value("${mqtt.client-id}")
     private String clientId;
+    private Logger logger;
 
     @PostConstruct
     public void init() throws Exception {
@@ -30,6 +34,7 @@ public class MqttSenderService {
     }
 
     public void sendTelemetry(String topic, String payload) throws Exception {
+        System.out.println("Sending telemetry to topic: " + topic + " with payload: " + payload);
         MqttMessage message = new MqttMessage(payload.getBytes());
         message.setQos(0);
         message.setRetained(false);

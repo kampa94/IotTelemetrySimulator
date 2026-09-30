@@ -1,10 +1,9 @@
-package com.kampa.telemetry.service;
+package org.kampa.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import tools.jackson.databind.ObjectMapper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +23,7 @@ public class MqttPayload {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             return objectMapper.writeValueAsString(payolad);
-        } catch (JsonProcessingException e) {
+        } catch (Error e) {
             throw new Error(e);
         }
     }
