@@ -20,7 +20,6 @@ public class MqttSenderService {
 
     @Value("${mqtt.client-id}")
     private String clientId;
-    private Logger logger;
 
     @PostConstruct
     public void init() throws Exception {

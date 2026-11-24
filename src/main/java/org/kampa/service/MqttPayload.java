@@ -10,19 +10,19 @@ import java.util.Map;
 
 @Component
 public class MqttPayload {
-    private final Map<String, Object> payolad = new HashMap<>();
+    private final Map<String, Object> payload = new HashMap<>();
     private static final Logger logger = LoggerFactory.getLogger(MqttPayload.class);
 
     public void buildInt(String key, int value) {
-        logger.info(payolad.toString());
-        payolad.put(key, value);
+        payload.put(key, value);
+        logger.info(payload.toString());
 
     }
 
     public String build() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            return objectMapper.writeValueAsString(payolad);
+            return objectMapper.writeValueAsString(payload);
         } catch (Error e) {
             throw new Error(e);
         }

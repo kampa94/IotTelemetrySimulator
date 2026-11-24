@@ -13,9 +13,9 @@ public class TelemetrySender {
     private final MqttPayload mqttPayload;
     private static final Logger logger = LoggerFactory.getLogger(TelemetrySender.class);
 
-    public TelemetrySender(MqttSenderService mqttSenderService, MqttPayload mqttPayolad) {
+    public TelemetrySender(MqttSenderService mqttSenderService, MqttPayload mqttPayload) {
         this.mqttSenderService = mqttSenderService;
-        this.mqttPayload = mqttPayolad;
+        this.mqttPayload = mqttPayload;
     }
 
     @Scheduled(fixedRateString = "${mqtt.fixed-rate}")
