@@ -7,9 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling
 public class IotTelemetrySimulatorApplication {
-
-    public static void main(String[] args) {
+    static void main(String[] args) {
         SpringApplication.run(IotTelemetrySimulatorApplication.class, args);
     }
-
 }
