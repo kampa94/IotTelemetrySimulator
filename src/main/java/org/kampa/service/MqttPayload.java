@@ -19,12 +19,12 @@ public class MqttPayload {
 
     }
 
-    public String build() {
+    public String build() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             return objectMapper.writeValueAsString(payload);
         } catch (Error e) {
-            throw new Error(e);
+            throw new Exception("Error occurred while building MQTT payload", e);
         }
     }
 }

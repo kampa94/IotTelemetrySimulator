@@ -19,7 +19,7 @@ public class TelemetrySender {
     }
 
     @Scheduled(fixedRateString = "${mqtt.fixed-rate}")
-    public void sendPeriodicTelemetry() {
+    public void sendPeriodicTelemetry() throws Exception {
         String topic = "telemetria/temperatura";
         mqttPayload.buildInt("numero", 22222);
         mqttPayload.buildInt("numero2", 33333);
